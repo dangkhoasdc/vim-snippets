@@ -116,15 +116,22 @@ snippet v "verb" w
 \verb|$1| $0
 endsnippet
 
-snippet o "Source file"
-@o $1
-@{ $2 @}
+snippet sso "Source file" b
+@o ${1:source_file}
+@{ ${2:content}
+@}
 $0
 endsnippet
 
-snippet s "Scrap"
-@d $1
-@{ $2 @}
+snippet ssc "Scrap" b
+@d ${1:scrap_name}
+@{ ${2:content}
+@}
+$0
+endsnippet
+
+snippet scc "Call scrap" w
+@<${1:scrap_name}@>
 $0
 endsnippet
 
@@ -239,5 +246,19 @@ ${2:${VISUAL:code}}
 \end{listing}
 
 $0
+endsnippet
+
+
+snippet note "Note Stufte" b
+\documentclass{tufte-handout}
+\title{$1}
+\author[Dang-Khoa]{Dang-Khoa}
+\usepackage{listings}
+\begin{document}
+\maketitle
+
+$0
+
+\end{document}
 endsnippet
 # vim:ft=snippets:
